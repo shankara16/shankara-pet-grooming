@@ -38,9 +38,9 @@ function scrollToForm() {
 function kirimPesan() {
     var nama = document.getElementById("nama").value.trim();
     var email = document.getElementById("email").value.trim();
-    var nohp = document.getElementById("nohp").value.trim();
+    var alamat = document.getElementById("alamat").value.trim();
 
-    if (!nama || !email || !nohp) {
+    if (!nama || !email || !alamat) {
         Swal.fire({
             icon: 'warning',
             title: 'Formulir belum lengkap',
@@ -53,7 +53,7 @@ function kirimPesan() {
     var pesan = "Halo Shankara Pet,%0ASaya ingin booking grooming.%0A%0A" +
                 "Nama: " + encodeURIComponent(nama) + "%0A" +
                 "Email: " + encodeURIComponent(email) + "%0A" +
-                "No HP: " + encodeURIComponent(nohp);
+                "Alamat: " + encodeURIComponent(alamat);
 
     var url = "https://wa.me/6285877167870?text=" + pesan;
     window.open(url, '_blank');
@@ -252,7 +252,7 @@ function kirimPesan() {
     var pesan = "Halo Shankara Pet,%0ASaya ingin booking grooming.%0A%0A" +
                 "Nama: " + encodeURIComponent(nama) + "%0A" +
                 "Email: " + encodeURIComponent(email) + "%0A" +
-                "No HP: " + encodeURIComponent(alamat);
+                "Alamat: " + encodeURIComponent(alamat);
 
     var url = "https://wa.me/6285877167870?text=" + pesan;
     window.open(url, '_blank');
