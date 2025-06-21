@@ -18,6 +18,49 @@
 
     <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- SweetAlert2 CDN start-->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+function scrollToForm() {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+        Swal.fire({
+            icon: 'info',
+            title: 'Booking Grooming',
+            text: 'Silakan isi formulir di bawah ini untuk melanjutkan ke WhatsApp.',
+            confirmButtonColor: '#fb704a'
+        });
+    }, 800);
+}
+
+function kirimPesan() {
+    var nama = document.getElementById("nama").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var nohp = document.getElementById("nohp").value.trim();
+
+    if (!nama || !email || !nohp) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Formulir belum lengkap',
+            text: 'Harap isi semua kolom sebelum melanjutkan.',
+            confirmButtonColor: '#fb704a'
+        });
+        return;
+    }
+
+    var pesan = "Halo Shankara Pet,%0ASaya ingin booking grooming.%0A%0A" +
+                "Nama: " + encodeURIComponent(nama) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "No HP: " + encodeURIComponent(nohp);
+
+    var url = "https://wa.me/6285877167870?text=" + pesan;
+    window.open(url, '_blank');
+}
+</script>
+ <!-- SweetAlert2 CDN end -->
+
 <body>
 
 <!-- navbar start -->
@@ -46,7 +89,8 @@
 <main class="content">
     <h1>Grooming Kucing di Shankara <span>Pet</span></h1>
     <p>Ingin kucing Anda tampil bersih, wangi, dan sehat tanpa harus repot keluar rumah? SHANKARA Pet hadir sebagai solusi perawatan kucing profesional dengan layanan grooming + antar jemput khusus wilayah Temanggung dan sekitarnya.</p>
-    <a href="https://wa.me/6285877167870?text=Halo%20Shankara%20Pet,%20saya%20ingin%20booking%20grooming%20kucing." class="cta" target="_blank">Grooming Sekarang</a>
+    <a href="#contact" class="cta" onclick="scrollToForm()">Grooming Sekarang</a>
+
   </main>
 </section>
 <!-- Hero section end -->
@@ -142,17 +186,25 @@
         <form action="">
             <div class="input-group">
                 <i data-feather="user"></i>
-                <input type="text" id="nama" placeholder="nama">
+                <input type="text" id="nama" placeholder="Nama">
             </div>
             <div class="input-group">
                 <i data-feather="mail"></i>
                 <input type="text" id="email" placeholder="e-mail">
             </div>
             <div class="input-group">
-                <i data-feather="phone"></i>
-                <input type="text" id="nohp" placeholder="no hp">
+                <i data-feather="home"></i>
+                <input type="text" id="nohp" placeholder="Alamat">
             </div>
-            <button type="button" class="btn" onclick="kirimPesan()">kirim pesan</button>
+            <div class="input-group">
+                <i data-feather="phone"></i>
+                <input type="text" id="nohp" placeholder="No hp">
+            </div>
+            <div class="input-group">
+                <i data-feather="home"></i>
+                <input type="text" id="nohp" placeholder="Alamat">
+            </div>
+            <button type="button" class="btn" onclick="kirimPesan()">Kirim Pesan Whatsapp</button>
         </form>
 
 
@@ -163,9 +215,9 @@
 <!-- Footer Section start -->
  <footer>
     <div class="socials">
-        <a href="#"><i data-feather="instagram"></i></a>
-        <a href="#"><i data-feather="twitter"></i></a>
-        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="https://www.instagram.com/shankara_pet/" target="_blank""><i data-feather="instagram"></i></a>
+        <a href="mailto:danangabdulaziz16@gmail.com" target="_blank"com"><i data-feather="mail"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61576207079456" target="_blank""><i data-feather="facebook"></i></a>
     </div>
 
     <div class="links">
@@ -202,9 +254,9 @@ function kirimPesan() {
     }
 
     var pesan = "Halo Shankara Pet,%0ASaya ingin booking grooming.%0A%0A" +
-                "Nama: " + nama + "%0A" +
-                "Email: " + email + "%0A" +
-                "No HP: " + nohp;
+                "Nama: " + encodeURIComponent(nama) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "No HP: " + encodeURIComponent(nohp);
 
     var url = "https://wa.me/6285877167870?text=" + pesan;
     window.open(url, '_blank');
