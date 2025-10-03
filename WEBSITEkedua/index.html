@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shankara Grooming</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+   <!-- my style -->
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- SweetAlert2 CDN start-->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+function scrollToForm() {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+        Swal.fire({
+            icon: 'info',
+            title: 'Booking Grooming',
+            text: 'Silakan isi formulir di bawah ini untuk melanjutkan ke WhatsApp.',
+            confirmButtonColor: '#fb704a'
+        });
+    }, 800);
+}
+
+function kirimPesan() {
+    var nama = document.getElementById("nama").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var alamat = document.getElementById("alamat").value.trim();
+
+    if (!nama || !email || !alamat) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Formulir belum lengkap',
+            text: 'Harap isi semua kolom sebelum melanjutkan.',
+            confirmButtonColor: '#fb704a'
+        });
+        return;
+    }
+
+    var pesan = "Halo Shankara Pet,%0ASaya ingin booking grooming.%0A%0A" +
+                "Nama: " + encodeURIComponent(nama) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "Alamat: " + encodeURIComponent(alamat);
+
+    var url = "https://wa.me/6285877167870?text=" + pesan;
+    window.open(url, '_blank');
+}
+</script>
+ <!-- SweetAlert2 CDN end -->
+
+<body>
+
+<!-- navbar start -->
+    <nav class="navbar">
+     <a href="#" class="navbar-logo">shankara<span>pet</span>.</a>
+
+
+     <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#service">Servis</a>
+        <a href="#contact">Kontak</a>
+     </div>
+
+     <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i>
+        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i>
+        </a>
+     </div>
+    </nav>
+<!-- Navbar End -->
+
+<!-- Hero section start -->
+<section class="hero" id="home">
+<main class="content">
+    <h1>Grooming Kucing di Shankara <span>Pet</span></h1>
+    <p>Ingin kucing Anda tampil bersih, wangi, dan sehat tanpa harus repot keluar rumah? SHANKARA Pet hadir sebagai solusi perawatan kucing profesional dengan layanan grooming + antar jemput khusus wilayah Temanggung dan sekitarnya.</p>
+    <a href="#contact" class="cta" onclick="scrollToForm()">Grooming Sekarang</a>
+
+  </main>
+</section>
+<!-- Hero section end -->
+
+<!-- About Section start -->
+<section id="about" class="about">
+   <h2><span>Tentang</span> Kami</h2>
+
+   <div class="row">
+       <div class="about-img">
+           <img src="css/img/tentang-kami.png" alt="Tentang Kami">
+       </div>
+       <div class="content">
+           <h3>Kenapa memilih grooming di Shankara Pet?</h3>
+           <p>Kami menyediakan perawatan lengkap mulai dari mandi, potong kuku, pembersihan telinga, hingga grooming bulu oleh tim groomer berpengalaman yang sayang hewan.
+           Groomer ramah & profesional
+           Layanan antar jemput GRATIS di Temanggung, 
+           Perawatan higienis & peralatan steril,
+           Paket grooming sesuai kebutuhan kucing Anda, Booking mudah via WhatsApp atau website,
+           <p>Biar kami yang jemput, kucing Anda tinggal tampil menawan! Hubungi SHANKARA Pet sekarang dan rasakan kemudahan grooming kucing dari rumah.</P>
+
+       </div>
+   </div>
+</section>
+<!-- About Section end -->
+
+
+<!-- Service Section start -->
+<section id="service" class="service">
+    <h2><span>Servis</span> Kami</h2>
+    <p>Grooming adalah segala tindakan yang dilakukan kepada hewan kesayangan kita untuk dijaga penampilan dan juga kesehatannya. Untuk melakukan pet grooming ini perlu dilakukan dengan cara yang benar dan sesuai prosedur.</p>
+ 
+    <div class="row">
+        <div class="service-card">
+            <img src="css/img/service/service-1.jpg" alt="grooming">
+            <h3 class="service-card-tittle">
+                - Pemotongan Kuku -
+            </h3>
+            <p class="service-card-explan">Perawatan kuku kucing Anda, supaya lebih sehat, mengurangi risiko melukai owner, dan lebih terlihat. Kuku kucing Anda akan dipotong sesuai dengan batasannya, agar tidak terlalu dalam dan menyebabkan kucing kesakitan, berdarah, apalagi trauma untuk dipotong.
+            </p>
+    </div>
+        <div class="service-card">
+            <img src="css/img/service/service-2.jpg" alt="grooming">
+            <h3 class="service-card-tittle">
+                - Pembersihan Telinga -
+            </h3>
+            <p class="service-card-explan">Sebagian besar telinga bagian dalam kucing pastinya akan kotor. Karena kucing tidak dapat membersihkan telinganya sendiri seperti mereka membersihkan badan sendiri dengan cara menjilat-jilat. Melalui treatment ears cleaning ini, Kesehatan telinga kucing akan diperiksa apakah berisiko memiliki penyakit atau tidak. Dan selain itu akan dibersihkan bagian dalam telinga yang biasanya kotor dengan menggunakan cairan ears cleaner khusus.
+            </p>
+    </div>
+        <div class="service-card">
+            <img src="css/img/service/service-3.jpg" alt="grooming">
+            <h3 class="service-card-tittle">
+                - Merapihkan Bulu -
+            </h3>
+            <p class="service-card-explan">Dalam proses ini, bulu pada paw serta sekitar anus kami bantu untuk rapihkan agar kucing Anda nyaman saat beraktivitas.
+            </p>
+    </div>
+        <div class="service-card">
+            <img src="css/img/service/service-4.jpg" alt="grooming">
+            <h3 class="service-card-tittle">
+                - Sisir Bulu -
+            </h3>
+            <p class="service-card-explan">Treatment ini merupakan penyisiran yang dilakukan pada seluruh permukaan bulu kucing. Hal ini dilakukan supaya menghindari bulu agar tidak gimbal serta tidak lembab untuk menghindari tumbuhnya jamur pada badan kucing Anda.
+            </p>
+    </div>
+        <div class="service-card">
+            <img src="css/img/service/service-5.jpg" alt="grooming">
+            <h3 class="service-card-tittle">
+                - Bathing -
+            </h3>
+            <p class="service-card-explan">Pada proses ini, seluruh badan kucing akan dibasahi secara merata hingga ke kulit dengan hati-hati supaya air tidak masuk ke dalam telinga. Kemudian diusap menggunakan shampoo khusus untuk kucing yang aman bagi kulit kucing Anda.
+            </p>
+    </div>
+        <div class="service-card">
+            <img src="css/img/service/service-6.jpg" alt="grooming">
+            <h3 class="service-card-tittle">
+                - Pengeringan Menyeluruh -
+            </h3>
+            <p class="service-card-explan">Setelah dimandikan, kucing akan dibilas dan dikeringkan. Proses ini harus dilakukan secara teliti dan menyeluruh ke setiap permukaan kulit kucing. Hal tersebut agar kulit kucing tidak lembab, dan tidak menyebabkan jamuran.
+            </p>
+    </div>
+ </section>
+<!-- Service Section end -->
+
+
+<!-- Contact  Section start -->
+<section id="contact" class="contact">
+    <h2><span>Kontak</span> Kami</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, tenetur.</p>
+
+    <div class="row">
+        <iframe 
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.634544687524!2d110.1781932!3d-7.2994657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7078647f78e2b3%3A0x7226e78fdaa8691e!2sKayogan%2C%20Sidorejo%2C%20Kec.%20Temanggung%2C%20Kabupaten%20Temanggung%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1680000000000"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form action="">
+            <div class="input-group">
+                <i data-feather="user"></i>
+                <input type="text" id="nama" placeholder="Nama">
+            </div>
+            <div class="input-group">
+                <i data-feather="mail"></i>
+                <input type="text" id="email" placeholder="e-mail">
+            </div>
+            <div class="input-group">
+                <i data-feather="home"></i>
+                <input type="text" id="alamat" placeholder="Alamat">
+            </div>
+            <button type="button" class="btn" onclick="kirimPesan()">Kirim Pesan Whatsapp</button>
+        </form>
+
+
+    </div>
+    </section>
+<!-- Contact  Section start -->
+
+<!-- Footer Section start -->
+ <footer>
+    <div class="socials">
+        <a href="https://www.instagram.com/shankara_pet/" target="_blank""><i data-feather="instagram"></i></a>
+        <a href="mailto:danangabdulaziz16@gmail.com" target="_blank"com"><i data-feather="mail"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61576207079456" target="_blank""><i data-feather="facebook"></i></a>
+    </div>
+
+    <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#service">Servis</a>
+        <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="credit">
+        <p>Created by <a href=""> danangabdulaziz</a>. | &copy, 2025.</p>
+    </div>
+ </footer>
+<!-- Footer Section start -->
+
+<!-- feather icons -->
+    <script>
+        feather.replace();
+      </script>
+
+<!-- My Javascript -->
+    <script src="js/script.js"></script> 
+
+
+<script>
+function kirimPesan() {
+    var nama = document.getElementById("nama").value;
+    var email = document.getElementById("email").value;
+    var alamat = document.getElementById("alamat").value;
+
+    if (!nama || !email || !alamat) {
+        alert("Silakan isi semua data terlebih dahulu.");
+        return;
+    }
+
+    var pesan = "Halo Shankara Pet,%0ASaya ingin booking grooming.%0A%0A" +
+                "Nama: " + encodeURIComponent(nama) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "Alamat: " + encodeURIComponent(alamat);
+
+    var url = "https://wa.me/6285877167870?text=" + pesan;
+    window.open(url, '_blank');
+}
+</script>
+</body>
+
+</html>
