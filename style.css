@@ -174,13 +174,16 @@ body {
 }
 
 .about .row .about-img {
-    flex: 1 1 45rem;
-}
-
-.about .row .about-img {
     width: 100%;
+    flex: 1 1 40%;
+   
 }
 
+.about .row .about-img img {
+    width: 100%;    
+    height: auto;
+}
+   
 .about .row .content {
     flex: 1 1 45rem;
     padding: 0 1rem;
