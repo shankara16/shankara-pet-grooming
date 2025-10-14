@@ -170,8 +170,10 @@ body {
 }
 
 .about .row .about-img img {
+    /* keep image responsive but limit maximum display size */
     flex: 1 1 45rem;
-    max-width: 100%;
+    max-width: 400px; /* change this value to control maximum size */
+    width: 100%; /* allow image to scale down on small screens */
     height: auto;
     display: block;
     margin: 0 auto;
