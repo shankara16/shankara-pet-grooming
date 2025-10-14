@@ -171,6 +171,11 @@ body {
 
 .about .row .about-img img {
     flex: 1 1 45rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
 }
 
 .about .row .about-img {
