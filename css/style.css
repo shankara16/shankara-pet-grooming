@@ -169,7 +169,7 @@ body {
     display: flex;
 }
 
-.about .row .about-img {
+.about .row .about-img img {
     flex: 1 1 45rem;
 }
 
