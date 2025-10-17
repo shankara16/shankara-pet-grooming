@@ -106,11 +106,14 @@ body {
     bottom: 0;
     background: linear-gradient( 0deg, rgba(1, 1, 3, 1) 8%, 
     rgba(255, 255, 255, 0) 50%);
+    z-index: 0; /* keep overlay behind hero content */
 }
 
 .hero .content {
     padding: 1.4rem 7%;
     max-width: 55rem;
+    position: relative;
+    z-index: 2; /* ensure content (and CTA) sits above the overlay so it's clickable */
 }
 
 .hero .content h1 {
@@ -142,6 +145,8 @@ body {
     background-color: var(--primary);
     border-radius: 0.5rem;
     box-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    position: relative;
+    z-index: 3; /* make extra sure the button is on top and fully clickable */
 }
 
 
@@ -172,7 +177,7 @@ body {
 .about .row .about-img img {
     /* keep image responsive but limit maximum display size */
     flex: 1 1 45rem;
-    max-width: 400px; /* change this value to control maximum size */
+    max-width: 800px; /* change this value to control maximum size */
     width: 100%; /* allow image to scale down on small screens */
     height: auto;
     display: block;
